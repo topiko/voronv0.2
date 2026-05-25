@@ -47,6 +47,17 @@ git clone git@github.com:dw-0/kiauh.git
 During installation, this setup used:
 - Mainsail on port `80`
 
+## PrusaSlicer Upload
+
+PrusaSlicer can connect directly using the `Klipper / Moonraker` printer option.
+
+In this setup, the Flatpak build did not resolve `voronv02.local` correctly, even though it worked in a browser.
+
+Use the printer IP directly instead:
+- `http://192.168.50.36:7125`
+
+It is a good idea to make that IP static in the router.
+
 ## SKR Pico Flashing
 
 Reference:
@@ -189,6 +200,22 @@ Current shutdown behavior:
 - waits briefly, then powers off the Raspberry Pi through Moonraker
 
 This is intended as the normal no-laptop-needed shutdown path.
+
+## Electronics Cooling Fan
+
+The loose 24V electronics fan next to the SKR Pico is wired to the Pico fan header mapped to `gpio20`.
+
+It is configured in `config/printer.cfg` as:
+
+```ini
+[controller_fan pcb_fan]
+pin: gpio20
+max_power: 1.0
+kick_start_time: 0.5
+stepper: stepper_x, stepper_y, stepper_z, extruder
+```
+
+This means the fan runs when the main printer steppers are enabled/active.
 
 ## Bring-Up Checklist
 
