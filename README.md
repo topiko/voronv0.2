@@ -126,6 +126,14 @@ Note:
 The active printer config is:
 - `config/printer.cfg`
 
+To sync the local `config/` directory to the printer's Klipper config directory, run:
+
+```bash
+./sync_configs.sh
+```
+
+This uses `rsync` to copy `config/` to `pi@voronv02.local:~/printer_data/config/` without deleting remote-only files.
+
 This file includes:
 - `mainsail.cfg`
 - `V0Display.cfg`
