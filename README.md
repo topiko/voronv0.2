@@ -132,7 +132,7 @@ To sync the local `config/` directory to the printer's Klipper config directory,
 ./sync_configs.sh
 ```
 
-This uses `rsync` to copy `config/` to `pi@voronv02.local:~/printer_data/config/` without deleting remote-only files.
+This uses `rsync` to copy `config/` to `voronv02:~/printer_data/config/` without deleting remote-only files, relying on the `voronv02` host entry in `~/.ssh/config`.
 
 This file includes:
 - `mainsail.cfg`

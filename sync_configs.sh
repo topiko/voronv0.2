@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-rsync -av config/ pi@voronv02.local:~/printer_data/config/
+rsync -av config/ voronv02:~/printer_data/config/
