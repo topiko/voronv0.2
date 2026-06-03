@@ -11,6 +11,8 @@ Key files:
 - `config/display_menu_overrides.cfg`: LCD menu label and layout overrides
 - `menuconf_options/menuconf_display`: known-good Klipper `menuconfig` output for the V0 display
 
+The `menuconf_options/` directory stores tracked reference outputs from Klipper `make menuconfig` so the known-good firmware build settings can be reproduced later.
+
 ## Wiring And Assembly
 
 Build and wire the printer according to the LDO docs:
