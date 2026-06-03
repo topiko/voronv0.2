@@ -210,6 +210,14 @@ Behavior:
 
 This is intended to avoid stacking offsets when switching between plates while still making the active plate choice easy to re-apply before a print.
 
+## Filament Sensor
+
+To query the current filament runout sensor state from the console:
+
+```gcode
+QUERY_FILAMENT_SENSOR SENSOR=runout_sensor
+```
+
 ## Display-Driven Pi Shutdown
 
 The shutdown logic lives in:
