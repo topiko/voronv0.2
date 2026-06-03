@@ -190,6 +190,26 @@ Current top-level power menu entries:
 - `Restart FW`
 - `Shutdown Pi`
 
+Current top-level utility menu entries also include:
+- `Filament`
+- `Build Plate`
+
+## Build Plate Selection
+
+The display menu includes a `Build Plate` submenu for selecting plate-specific Z offsets.
+
+Configured plates:
+- `PEI1SIDE`: `0.0` (default after restart)
+- `PEI2SIDE`: `-0.16`
+- `PCB`: `-0.6`
+
+Behavior:
+- selecting a plate from the display applies its configured Z offset
+- `PRINT_START` re-applies the currently selected plate offset silently
+- plate selection is disabled while printing or paused
+
+This is intended to avoid stacking offsets when switching between plates while still making the active plate choice easy to re-apply before a print.
+
 ## Display-Driven Pi Shutdown
 
 The shutdown logic lives in:
@@ -238,6 +258,7 @@ Once all MCUs are flashed and the config is loaded:
 8. Home the printer.
 9. Run heater PID tuning if needed.
 10. Continue with standard Voron startup calibration.
+11. `Z_SCREW_ADJUST` followed by `Z_ENDSTOP_CALIBRATE`
 
 ## Notes
 
