@@ -15,7 +15,8 @@ The `menuconf_options/` directory stores tracked reference outputs from Klipper 
 
 ## Wiring And Assembly
 
-Build and wire the printer according to the LDO docs:
+Build and wire the printer according to the Voron and LDO docs:
+- [VoronV0.2](https://vorondesign.com/voron0.2)
 - [LDO Voron V0.2 wiring guide](https://docs.ldomotors.com/voron/voron02/wiring_guide_rev_a)
 
 Hardware note:
