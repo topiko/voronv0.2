@@ -214,6 +214,13 @@ Behavior:
 
 This is intended to avoid stacking offsets when switching between plates while still making the active plate choice easy to re-apply before a print.
 
+The effective runtime Z compensation is the sum of:
+- the saved `stepper_z.position_endstop` base calibration
+- the selected build plate offset
+- the bed-temperature correction
+
+The build plate and bed-temperature corrections are both applied as tracked deltas so repeated plate selections or repeated `PRINT_START` runs do not stack unexpectedly.
+
 The printer also applies a non-stacking bed-temperature Z correction in `PRINT_START` after the bed reaches its target temperature.
 
 Current bed temperature calibration:
