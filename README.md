@@ -202,9 +202,10 @@ Current top-level utility menu entries also include:
 The display menu includes a `Build Plate` submenu for selecting plate-specific Z offsets.
 
 Configured plates:
-- `PEI1SIDE`: `0.0` (default after restart)
-- `PEI2SIDE`: `-0.16`
-- `PCB`: `-0.6`
+- `PEI1-1`: `0.0` (default after restart)
+- `PEI1-2`: `-0.06`
+- `PEI2SIDE`: `-0.34`
+- `PCB`: `0.62`
 
 Behavior:
 - selecting a plate from the display applies its configured Z offset
@@ -212,6 +213,14 @@ Behavior:
 - plate selection is disabled while printing or paused
 
 This is intended to avoid stacking offsets when switching between plates while still making the active plate choice easy to re-apply before a print.
+
+The printer also applies a non-stacking bed-temperature Z correction in `PRINT_START` after the bed reaches its target temperature.
+
+Current bed temperature calibration:
+- `60C`: `0.00`
+- `110C`: `-0.15`
+
+This compensation is applied on top of the selected build plate offset and is intended to account for build plate expansion with heat.
 
 ## Filament Sensor
 
