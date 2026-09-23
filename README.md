@@ -285,7 +285,7 @@ Once all MCUs are flashed and the config is loaded:
 8. Home the printer.
 9. Run heater PID tuning if needed.
 10. Continue with standard Voron startup calibration.
-11. `Z_SCREW_ADJUST` followed by `Z_ENDSTOP_CALIBRATE`
+11. `BED_SCREW_ADJUST` followed by `Z_ENDSTOP_CALIBRATE`
 
 ## Notes
 
